@@ -7,3 +7,5 @@ WORKDIR /usr/src/mjpg-streamer
 RUN useradd makepkg ; echo "makepkg ALL = (root) NOPASSWD:ALL" >> /etc/sudoers.d/makepkg
 RUN chown makepkg -R .
 RUN su -c "makepkg -si --noconfirm" -s /bin/bash makepkg
+
+ENTRYPOINT [ "mjpg_streamer" ]
